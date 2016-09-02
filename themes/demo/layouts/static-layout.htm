@@ -1,0 +1,18 @@
+description = "Output static pages."
+
+[staticPage]
+
+[staticMenu]
+
+[staticBreadcrumbs]
+==
+<html>
+    <head>
+        <title>{{ this.page.title }}</title>
+    </head>
+    <body>
+        {% component 'staticMenu' %}
+        {% component 'staticBreadcrumbs' %}
+        {% page %}
+    </body>
+</html>

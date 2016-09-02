@@ -1,0 +1,5 @@
+1.0.0:
+    - First version of Blog with RJGallery
+    - create_blog_gallery_field.php
+1.0.1:
+    - Fix for plugin uninstall

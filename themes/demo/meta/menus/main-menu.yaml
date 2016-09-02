@@ -1,0 +1,366 @@
+name: 'Main Menu'
+items:
+    -
+        title: Home
+        type: url
+        url: /
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Aktionen
+        type: url
+        url: 'http://www.wohngesund.at/aktionen/parkett-landhausdielen'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'Landhausdiele antik'
+        nesting: '1'
+        type: blog-category
+        url: ''
+        code: ''
+        reference: '2'
+        cmsPage: blog/category
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Alhambra
+                nesting: ''
+                type: url
+                url: /landhausdielen-castle-antik/alhambra
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Belvedere
+                nesting: ''
+                type: url
+                url: /andhausdielen-castle-antik/belvedere
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Versailles
+                nesting: ''
+                type: url
+                url: /andhausdielen-castle-antik/versailles
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Mirabell
+                nesting: ''
+                type: url
+                url: /andhausdielen-castle-antik/mirabell
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: 'Landhausdiele glatt'
+        nesting: '0'
+        type: blog-category
+        url: ''
+        code: ''
+        reference: '3'
+        cmsPage: blog/category
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Mariahil
+                type: url
+                url: /landhausdiele-vienna-classic/mariahilf
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Freudenau
+                type: url
+                url: /landhausdiele-vienna-classic/freudenau
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Semmering
+                type: url
+                url: /landhausdiele-vienna-classic/semmering
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Neustift
+                type: url
+                url: /landhausdiele-vienna-classic/neustift
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Grinzing
+                type: url
+                url: /landhausdiele-vienna-classic/grinzing
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: 'Landhausdiele gehobelt'
+        nesting: '0'
+        type: blog-category
+        code: ''
+        reference: '4'
+        cmsPage: blog/category
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Dolomiti
+                type: url
+                url: /landhausdiele-mountain/dolomiti
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Silvretta
+                type: url
+                url: /landhausdiele-mountain/silvretta
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Cordillera
+                type: url
+                url: /landhausdiele-mountain/corillera
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Montafon
+                type: url
+                url: /landhausdiele-mountain/dolomiti
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: 'Landhausdiele gebürstet'
+        nesting: '0'
+        type: blog-category
+        code: ''
+        reference: '5'
+        cmsPage: blog/category
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Cornwall
+                type: url
+                url: /landhausdiele-scenic/cornwall
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Provence
+                type: url
+                url: /landhausdiele-scenic/provence
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Gotland
+                type: url
+                url: /landhausdiele-scenic/gotland
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Algarve
+                type: url
+                url: /landhausdiele-scenic/algarve
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Edelholzdielen
+        nesting: '0'
+        type: blog-category
+        code: ''
+        reference: '7'
+        cmsPage: blog/category
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Ahorn Kanadisch'
+                type: url
+                url: /edelholzdielen/ahorn-kanadisch
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Iroko
+                type: url
+                url: /edelholzdielen/iroko
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Merbau
+                type: url
+                url: /edelholzdielen/merbau
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Nuss amerikanisch'
+                type: url
+                url: /edelholzdielen/nuss-amerikanisch
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Holzdielen
+        type: url
+        url: /holzdielen
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Online Anfrage'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: online-anfrage
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Wiederverkäufer
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: online-anfrage-wiederverkaeufer
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Wiederverkäufer
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: wiederverkaeufer
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Pflegetipps
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: landhausdielen-pflege
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Über uns'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: das-unternehmen
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Kontakt
+        type: url
+        url: 'http://www.wohngesund.at/kontakt'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'

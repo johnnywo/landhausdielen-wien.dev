@@ -1,0 +1,75 @@
+title = "Blog Post"
+url = "/:category/:slug"
+layout = "default"
+description = "Viewing a single Blog Post."
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[gallery]
+idGallery = "{{ :title }}"
+lang = "Gallery"
+jqueryinject = "yes"
+thumbnail = "true"
+caption = "true"
+desc = "true"
+counter = "true"
+controls = "true"
+preload = 1
+mode = "fade"
+speed = 300
+loop = "true"
+auto = "false"
+pause = 2000
+escKey = "true"
+height = 200
+width = 300
+resizer = "auto"
+==
+{% set post = blogPost.post %}
+
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>{{ post.title }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="content">
+            {{ post.content_html|raw }}
+        </div>
+        
+        
+        {% if post.featured_images.count %}
+            <div class="featured-images text-center">
+                {% for image in post.featured_images %}
+                    <p>
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 100%" />
+                    </p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <p class="info">
+            Posted
+            {% if post.categories.count %} in
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            {% endif %}
+            on {{ post.published_at|date('M d, Y') }}
+        </p>
+        {% component 'gallery' gallery=post.rjgallery %}
+    </div>
+</div>
