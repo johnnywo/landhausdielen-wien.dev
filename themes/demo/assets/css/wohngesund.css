@@ -1,0 +1,59 @@
+body {
+    background: #d6c4a5 url('../images/bg-body.jpg') top left no-repeat;
+}
+
+body section#layout-content .col-sm-9 {
+    background: whitesmoke;
+    color: black;
+}
+
+.container.wohngesund-brown{
+    background: #543928;
+    color: whitesmoke;
+}
+
+.navbar {
+    border: none;
+}
+
+@media (min-width: 768px)
+    .navbar {
+        border-radius: 4px;
+    }
+
+.navbar-default {
+    border-color: inherit;
+}
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+        background: #543928;
+        color: white;
+        border: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+    }
+    .sidebar-nav .navbar ul:not {
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+        border: none;
+        border-bottom: 1px solid #c6bea3;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        color: white;
+        border: none;
+    }
+}
+
+.bigger{
+    font-size: 200%;
+}

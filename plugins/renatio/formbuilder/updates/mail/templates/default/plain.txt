@@ -1,0 +1,12 @@
+Hi there,
+
+Here is your filled form:
+
+Example text field: {{ text }}
+Example textarea field: {{ textarea }}
+Example dropdown field: {{ dropdown }}
+Example checkbox field: {{ checkbox ? 'Yes' : 'No'}}
+Example checkbox list field: {{ checkbox_list|join(', ') }}
+Example radio list field: {{ radio_list }}
+
+Thanks, have a lovely day.

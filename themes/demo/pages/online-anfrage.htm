@@ -1,0 +1,64 @@
+title = "Online Anfrage und Preisauskunft - Landhausdielen"
+url = "/online-anfrage-1"
+layout = "default"
+is_hidden = 0
+
+[renderForm]
+formCode = "online-anfrage"
+==
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{ this.page.title }}</h1>
+    </div>
+</div>
+<div>
+    <p>Benutzen Sie unsere Online-Anfrage und holen sie sich jetzt ein unverbindliches Angebot für unsere COUNTRY HOUSE Landhausdielen!<br />
+    Nützen Sie auch unsere österreichweite GRATIS HOTLINE: 0800 / 25 22 11! - Ein Mitarbeiter unserer Verkaufsabteilung wird sich sofort um ihr Anliegen kümmern und Sie bestmöglich zu unseren Holzdielen Serien beraten.</p>
+</div>
+{% if renderForm.form %}
+
+    <div class="{{ renderForm.id }}"></div>
+
+    {% flash %}
+
+        {% if renderForm.form.code in message %}
+
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message|replace({ (renderForm.form.code) : ''})|raw }}
+            </div>
+
+        {% endif %}
+
+    {% endflash %}
+
+    {{ form_open({
+            'id': renderForm.form.code,
+            'class': renderForm.form.css_class,
+            'data-request': renderForm ~ '::onSubmit',
+            'data-request-data': {form: renderForm.form.code},
+            'data-request-update': "'" ~ renderForm ~ "::confirm' : '." ~ renderForm.id ~ "'"
+        })
+    }}
+
+        {% for section in renderForm.form.sections if not section.fields is empty %}
+
+            {{ section.html|raw }}
+
+        {% endfor %}
+
+        {% for field in renderForm.form.fields if not field.section %}
+
+            {% if (field.field_type.code == 'file_uploader') %}
+                {% partial renderForm ~ '::file_uploader' %}
+            {% else %}
+                {{ field.html|raw }}
+            {% endif %}
+
+        {% endfor %}
+
+    {{ form_close() }}
+
+{% endif %}

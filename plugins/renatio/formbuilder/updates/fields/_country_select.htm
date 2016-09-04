@@ -1,0 +1,15 @@
+<div class="{{ wrapper_class }} form-group">
+
+    <label for="{{ name }}">{{ label }}</label>
+
+    {{ form_select_country(name, null,
+    {
+        class: class ~ ' form-control',
+        emptyOption: placeholder,
+        'data-request': 'onChangeCountry',
+        'data-request-success': 'updateStateDropdown(data)'
+    }) }}
+
+    {% if comment %}<p class="help-block">{{ comment }}</p>{% endif %}
+
+</div>

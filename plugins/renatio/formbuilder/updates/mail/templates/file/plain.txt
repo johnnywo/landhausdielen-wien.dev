@@ -1,0 +1,7 @@
+Hi there,
+
+Here is your filled form:
+
+Example text field: {{ text }}
+
+Thanks, have a lovely day.

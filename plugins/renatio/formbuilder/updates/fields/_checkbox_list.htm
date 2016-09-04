@@ -1,0 +1,24 @@
+<div class="{{ wrapper_class }} form-group">
+
+    <label class="btn-block" for="{{ name }}">{{ label }}</label>
+
+    {% set values = default|split('|') %}
+    {% for option in options %}
+
+        <label class="checkbox-inline">
+            <input {{ values[loop.index0] == option.key ? 'checked' : '' }}
+                type="checkbox"
+                name="{{ name }}[]"
+                class="{{ class }}"
+                id="{{ option.label }}"
+                value="{{ option.key }}"
+                {{ custom_attributes|raw }}
+            >
+            {{ option.label }}
+        </label>
+
+    {% endfor %}
+
+    {% if comment %}<p class="help-block">{{ comment }}</p>{% endif %}
+
+</div>

@@ -1,0 +1,13 @@
+<div id="country-state" class="{{ wrapper_class }} form-group">
+
+    <label for="{{ name }}">{{ label }}</label>
+
+    {{ form_select_state(name, null, null,
+    {
+        class: class ~ ' form-control',
+        emptyOption: placeholder
+    }) }}
+
+    {% if comment %}<p class="help-block">{{ comment }}</p>{% endif %}
+
+</div>

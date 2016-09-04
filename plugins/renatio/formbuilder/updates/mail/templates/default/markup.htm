@@ -1,0 +1,78 @@
+<!-- body -->
+<table class="body-wrap" bgcolor="#f6f6f6">
+    <tr>
+        <td></td>
+        <td class="container" bgcolor="#FFFFFF">
+
+            <!-- content -->
+            <div class="content">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Hi there,</p>
+
+                            <p>Here is your filled form:</p>
+
+                            <table>
+                                <tr>
+                                    <td>Example text field</td>
+                                    <td>{{ text }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Example textarea field</td>
+                                    <td>{{ textarea }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Example dropdown field</td>
+                                    <td>{{ dropdown }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Example checkbox field</td>
+                                    <td>{{ checkbox ? 'Yes' : 'No'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Example checkbox list field</td>
+                                    <td>{{ checkbox_list|join(', ') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Example radio list field</td>
+                                    <td>{{ radio_list }}</td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <p>Thanks, have a lovely day.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /content -->
+
+        </td>
+        <td></td>
+    </tr>
+</table>
+<!-- /body -->
+
+<!-- footer -->
+<table class="footer-wrap">
+    <tr>
+        <td></td>
+        <td class="container">
+
+            <!-- content -->
+            <div class="content">
+                <table>
+                    <tr>
+                        <td align="center">
+                            <p>Footer goes here</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /content -->
+
+        </td>
+        <td></td>
+    </tr>
+</table>
+<!-- /footer -->
