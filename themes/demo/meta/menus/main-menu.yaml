@@ -2,18 +2,26 @@ name: 'Main Menu'
 items:
     -
         title: Home
+        nesting: ''
         type: url
         url: /
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Aktionen
+        nesting: ''
         type: url
         url: 'http://www.wohngesund.at/aktionen/parkett-landhausdielen'
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -99,7 +107,7 @@ items:
             isExternal: '0'
         items:
             -
-                title: Mariahil
+                title: Mariahilf
                 type: url
                 url: /landhausdiele-vienna-classic/mariahilf
                 code: ''
@@ -109,36 +117,52 @@ items:
                     isExternal: '0'
             -
                 title: Freudenau
+                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/freudenau
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Semmering
+                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/semmering
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Neustift
+                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/neustift
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Grinzing
+                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/grinzing
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -147,6 +171,7 @@ items:
         title: 'Landhausdiele gehobelt'
         nesting: '0'
         type: blog-category
+        url: ''
         code: ''
         reference: '4'
         cmsPage: blog/category
@@ -158,36 +183,52 @@ items:
         items:
             -
                 title: Dolomiti
+                nesting: ''
                 type: url
                 url: /landhausdiele-mountain/dolomiti
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Silvretta
+                nesting: ''
                 type: url
                 url: /landhausdiele-mountain/silvretta
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Cordillera
+                nesting: ''
                 type: url
                 url: /landhausdiele-mountain/corillera
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Montafon
+                nesting: ''
                 type: url
                 url: /landhausdiele-mountain/dolomiti
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -196,6 +237,7 @@ items:
         title: 'Landhausdiele gebürstet'
         nesting: '0'
         type: blog-category
+        url: ''
         code: ''
         reference: '5'
         cmsPage: blog/category
@@ -207,36 +249,52 @@ items:
         items:
             -
                 title: Cornwall
+                nesting: ''
                 type: url
                 url: /landhausdiele-scenic/cornwall
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Provence
+                nesting: ''
                 type: url
                 url: /landhausdiele-scenic/provence
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Gotland
+                nesting: ''
                 type: url
                 url: /landhausdiele-scenic/gotland
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Algarve
+                nesting: ''
                 type: url
                 url: /landhausdiele-scenic/algarve
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -245,6 +303,7 @@ items:
         title: Edelholzdielen
         nesting: '0'
         type: blog-category
+        url: ''
         code: ''
         reference: '7'
         cmsPage: blog/category
@@ -256,45 +315,65 @@ items:
         items:
             -
                 title: 'Ahorn Kanadisch'
+                nesting: ''
                 type: url
                 url: /edelholzdielen/ahorn-kanadisch
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Iroko
+                nesting: ''
                 type: url
                 url: /edelholzdielen/iroko
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Merbau
+                nesting: ''
                 type: url
                 url: /edelholzdielen/merbau
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: 'Nuss amerikanisch'
+                nesting: ''
                 type: url
                 url: /edelholzdielen/nuss-amerikanisch
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
     -
         title: Holzdielen
+        nesting: ''
         type: url
         url: /holzdielen
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -303,8 +382,10 @@ items:
         title: 'Online Anfrage'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: online-anfrage
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -315,8 +396,10 @@ items:
                 title: Wiederverkäufer
                 nesting: '0'
                 type: static-page
+                url: ''
                 code: ''
                 reference: online-anfrage-wiederverkaeufer
+                cmsPage: ''
                 replace: '0'
                 viewBag:
                     isHidden: '0'
@@ -326,8 +409,10 @@ items:
         title: Wiederverkäufer
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: wiederverkaeufer
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -337,8 +422,10 @@ items:
         title: Pflegetipps
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: landhausdielen-pflege
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -348,8 +435,10 @@ items:
         title: 'Über uns'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: das-unternehmen
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -357,9 +446,13 @@ items:
             isExternal: '0'
     -
         title: Kontakt
+        nesting: ''
         type: url
         url: 'http://www.wohngesund.at/kontakt'
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''

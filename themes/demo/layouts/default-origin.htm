@@ -86,11 +86,10 @@ code = "main-menu"
                                     </button>
                                     <a class="visible-xs navbar-brand" href="{{ 'home'|page }}">Landhausdielen Wien</a>
                                 </div>
-                                <div class="sidebar-navbar-collapse" id="MainMenu">
-                                    <div class="list-group panel">
+                                <div class="collapse navbar-collapse sidebar-navbar-collapse">
+                                    <ul class="nav navbar-nav">
                                         {% for item in staticMenu.menuItems if not staticMenu.menuItems.viewBag.isHidden %}
-
-                                        <a class="list-group-item list-group-item-success {{ item.viewBag.cssClass }}" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }}</a>
+                                        <li class="{{ item.isActive or item.isChildActive ? 'active' : '' }} {{ item.items ? 'dropdown' : '' }} {{ item.viewBag.cssClass }}">
                                             {% if item.url and item.items == false %}
                                             <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
                                             {{ item.title }}
@@ -123,9 +122,9 @@ code = "main-menu"
 
                                             {% endif %}
 
-                                        </a>
+                                        </li>
                                         {% endfor %}
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
