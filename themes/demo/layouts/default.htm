@@ -90,40 +90,23 @@ code = "main-menu"
                                     <div class="list-group panel">
                                         {% for item in staticMenu.menuItems if not staticMenu.menuItems.viewBag.isHidden %}
 
-                                        <a class="list-group-item list-group-item-success {{ item.viewBag.cssClass }}" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }}</a>
-                                            {% if item.url and item.items == false %}
-                                            <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
-                                            {{ item.title }}
-                                            </a>
-
-                                            {% elseif item.url and item.items == true %}
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <b class="caret"></b></a>
-
-                                            {% else %}
-                                            <span>{{ item.title }}</span>
-                                            {% endif %}
+                                        <a href="{{ item.url }}" class="list-group-item list-group-item-success {{ item.viewBag.cssClass }}" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }}</a>
 
                                             {% if item.items %}
 
-                                                <ul class="dropdown-menu">
+                                            <div class="collapse" id="{{ item.title }}">
+
 
                                                 {% for subitem in item.items %}
-                                                    <li>
-                                                        {% if subitem.url %}
-                                                        <a href="{{ subitem.url }}" {{ subitem.viewBag.isExternal ? 'target="_blank"' }}>
-                                                        {{ subitem.title }}
-                                                        </a>
-                                                        {% else %}
-                                                        <span>{{ subitem.title }}</span>
-                                                        {% endif %}
-                                                    </li>
+                                                    <a href="{{ subitem.url }}" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">{{ subitem.title }} <i class="fa fa-caret-down"></i></a>
+
+
                                                 {% endfor %}
 
-                                                </ul>
 
                                             {% endif %}
 
-                                        </a>
+
                                         {% endfor %}
                                     </div>
                                 </div>
