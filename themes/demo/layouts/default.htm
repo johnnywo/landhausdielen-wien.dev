@@ -6,7 +6,10 @@ code = "main-menu"
 [staticPage]
 ==
 <?php
-
+use Milo\ActiveMenu;
+function onStart(){
+    $this['isChildActive'] = classActivePath($this)
+}
 ?>
 ==
 <!DOCTYPE html>
