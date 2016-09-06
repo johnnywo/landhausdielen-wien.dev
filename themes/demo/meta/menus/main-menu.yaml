@@ -30,7 +30,6 @@ items:
         title: 'Landhausdiele antik'
         nesting: '1'
         type: blog-category
-        url: ''
         code: ''
         reference: '2'
         cmsPage: blog/category
@@ -42,52 +41,36 @@ items:
         items:
             -
                 title: Alhambra
-                nesting: ''
                 type: url
                 url: /landhausdielen-castle-antik/alhambra
-                code: ''
-                reference: ''
-                cmsPage: ''
-                replace: ''
+                code: alhambra
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Belvedere
-                nesting: ''
                 type: url
                 url: /andhausdielen-castle-antik/belvedere
-                code: ''
-                reference: ''
-                cmsPage: ''
-                replace: ''
+                code: belvedere
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Versailles
-                nesting: ''
                 type: url
                 url: /andhausdielen-castle-antik/versailles
-                code: ''
-                reference: ''
-                cmsPage: ''
-                replace: ''
+                code: versailles
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Mirabell
-                nesting: ''
                 type: url
                 url: /andhausdielen-castle-antik/mirabell
-                code: ''
-                reference: ''
-                cmsPage: ''
-                replace: ''
+                code: mirabell
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -110,20 +93,16 @@ items:
                 title: Mariahilf
                 type: url
                 url: /landhausdiele-vienna-classic/mariahilf
-                code: ''
+                code: mariahilf
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Freudenau
-                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/freudenau
-                code: ''
-                reference: ''
-                cmsPage: ''
-                replace: ''
+                code: freudenau
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

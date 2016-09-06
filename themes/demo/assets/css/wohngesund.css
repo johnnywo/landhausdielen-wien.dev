@@ -33,12 +33,13 @@ body section#layout-content .col-sm-9 {
 
 @media (min-width: 768px) {
     .navbar {
-        border-radius: 4px;
+        border-radius: 0px;
     }
 }
 
 .navbar-default {
     border-color: inherit;
+    background-color: inherit;
 }
 
 /* make sidebar nav vertical */
@@ -87,6 +88,7 @@ body section#layout-content .col-sm-9 {
     }
 }
 
+
 .jumbotron.title-js{
     background: rgba(243, 223, 188, 0.46);
     color: #543928;
@@ -113,4 +115,39 @@ a:hover, a:focus {
 .sidebar-showrooms a, footer a {
     color: white;
     text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+
+}
+
+a.list-group-item-success {
+    background: #543928;
+    color: inherit;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 0px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid rgba(132, 118, 108, 0.83);
+}
+
+a.list-group-item-success:hover, a.list-group-item-success:focus {
+    color: #ffffff;
+    background-color: #755d4e;
 }

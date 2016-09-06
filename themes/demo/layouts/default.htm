@@ -5,6 +5,12 @@ code = "main-menu"
 
 [staticPage]
 ==
+<?php
+
+
+
+?>
+==
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
@@ -28,28 +34,6 @@ code = "main-menu"
 
         <!-- Header -->
         <header id="layout-header">
-
-            <!-- Nav -->
-<!--            <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
-                    </div>
-                    <div class="collapse navbar-collapse navbar-main-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
-                            <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                            <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>-->
 
             <div class="container wohngesund-brown">
                 <div class="col-sm-12">
@@ -76,74 +60,42 @@ code = "main-menu"
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="sidebar-nav">
-                            <div class="navbar navbar-default" role="navigation">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <a class="visible-xs navbar-brand" href="{{ 'home'|page }}">Landhausdielen Wien</a>
-                                </div>
-                                <div class="sidebar-navbar-collapse" id="MainMenu">
-                                    <div class="list-group panel">
+                                <div id="MainMenu" class="navbar navbar-default">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="visible-xs navbar-brand" href="{{ 'home'|page }}">Landhausdielen Wien</a>
+                                    </div>
+                                    <div class="list-group panel collapse navbar-collapse sidebar-navbar-collapse">
                                         {% for item in staticMenu.menuItems if not staticMenu.menuItems.viewBag.isHidden %}
 
-                                        <a href="{{ item.url }}" class="list-group-item list-group-item-success {{ item.viewBag.cssClass }}" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }}</a>
+                                            {% if item.url and item.items == false %}
 
-                                            {% if item.items %}
-
-                                            <div class="collapse" id="{{ item.title }}">
-
-
-                                                {% for subitem in item.items %}
-                                                    <a href="{{ subitem.url }}" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">{{ subitem.title }} <i class="fa fa-caret-down"></i></a>
-
-
-                                                {% endfor %}
-
-
+                                            <a href="{{ item.url }}" class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-parent="#MainMenu">{{ item.title }}</a>
+                                            {% elseif item.url and item.items == true %}
+                                            <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
+                                            {% else %}
+                                            <span>{{ item.title }}</span>
                                             {% endif %}
 
+                                                {% if item.items %}
+                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}" id="{{ id }}">
+                                                    {% for subitem in item.items %}
+                                                        <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}"  data-parent="#SubMenu1">{{ subitem.title }}</a>
+                                                    {% endfor %}
+                                                </div>
+                                                {% endif %}
 
                                         {% endfor %}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="sidebar-showrooms">
-                            <h2 class="schauraum">SCHAURÄUME:</h2>
-                            <p style="text-align: right;"><br><strong class="neu">NEU:</strong> <a class="filiale"
-                                                                                                   href="http://www.wohngesund.at/kontakt/anfahrtsbeschreibung.html#flagshipstore"><strong>ZENTRALE</strong></a><br>
-                                1070 Wien, Neubaugasse 15<br> <strong>T: +43 (0)1 715 51 52 - 0</strong><br><br> <a
-                                    class="filiale"
-                                    href="http://www.wohngesund.at/kontakt/anfahrtsbeschreibung.html#wien"
-                                    title="Kontaktdetails"><strong>FILIALE</strong></a><br>1030 Wien, Weyrgasse
-                                7<br><strong>T.: +43 (0)1 715 51 52 - 331</strong><br><br> <strong
-                                    class="neu">NEU: </strong><a
-                                    href="http://www.wohngesund.at/kontakt/anfahrtsbeschreibung.html#gerasdorf"
-                                    title="Anfahrtsbeschreibung zum Parkett-Schauraum in Gerasdorf"><strong>LAGERVERKAUF
-                                        NORD</strong> <img
-                                        src="http://www.wohngesund.at/_template/img/icon_parkplatz.png" border="0"
-                                        alt="Parkmöglichkeit" width="12" height="12"></a><br> Nähe Shopping Center
-                                <span><img class="border-white"
-                                           src="http://www.wohngesund.at/_template/img/g3-logo-40x37px.png" border="0"> </span><br>
-                                2201 Gerasdorf, Brünnerstr. 115-119<br> <strong>T: +43 (0)1 715 51 52 - 611<br>
-                                </strong><br> <a class="filiale"
-                                                 href="http://www.wohngesund.at/kontakt/anfahrtsbeschreibung.html#wrneustadt"
-                                                 title="Kontaktdetails Würflach"><strong>LAGERVERKAUF
-                                        SÜD</strong></a><br>Wiener Neustadt<br>2732 Würflach, Heuweg 203<br> <strong>T:
-                                    +43 (0) 699 123 78 488<br>+43 (0) 699 123 78 410</strong> <br><br><strong
-                                    class="neu">NEU:</strong> <a
-                                    href="http://www.wohngesund.at/kontakt/anfahrtsbeschreibung.html#graz"><strong>FILIALE</strong>
-                                    <img src="http://www.wohngesund.at/_template/img/icon_parkplatz.png" border="0"
-                                         alt="Parkmöglichkeit" width="12" height="12"></a><br>8054 Graz, Weblinger
-                                Gürtel 33<br><em>im Musterhauspark</em><br><br><a
-                                    href="http://www.wohngesund.at/kontakt/anfahrtsbeschreibung.html#grosshandelwien"
-                                    title="Kontaktdetails Großhandel"><strong>GROSSHANDEL</strong></a><br>1070 Wien,
-                                Lindengasse 38<br><strong>T: +43 (0)1 715 51 52 - 271</strong></p>
-                            <p>&nbsp;</p></div>
+
+                    {% partial 'showrooms' %}
 
                     </div>
                     <div class="col-sm-9">
@@ -180,3 +132,4 @@ code = "main-menu"
 
     </body>
 </html>
+
