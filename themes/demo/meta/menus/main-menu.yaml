@@ -30,7 +30,7 @@ items:
         title: 'Landhausdiele antik'
         nesting: '1'
         type: blog-category
-        code: ''
+        code: antik
         reference: '2'
         cmsPage: blog/category
         replace: '0'
@@ -43,34 +43,46 @@ items:
                 title: Alhambra
                 type: url
                 url: /landhausdielen-castle-antik/alhambra
-                code: alhambra
+                code: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Belvedere
+                nesting: ''
                 type: url
-                url: /andhausdielen-castle-antik/belvedere
+                url: /landhausdielen-castle-antik/belvedere
                 code: belvedere
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Versailles
+                nesting: ''
                 type: url
-                url: /andhausdielen-castle-antik/versailles
+                url: /landhausdielen-castle-antik/versailles
                 code: versailles
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Mirabell
+                nesting: ''
                 type: url
-                url: /andhausdielen-castle-antik/mirabell
+                url: /landhausdielen-castle-antik/mirabell
                 code: mirabell
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -79,8 +91,7 @@ items:
         title: 'Landhausdiele glatt'
         nesting: '0'
         type: blog-category
-        url: ''
-        code: ''
+        code: glatt
         reference: '3'
         cmsPage: blog/category
         replace: '0'
@@ -91,18 +102,26 @@ items:
         items:
             -
                 title: Mariahilf
+                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/mariahilf
                 code: mariahilf
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
                     isExternal: '0'
             -
                 title: Freudenau
+                nesting: ''
                 type: url
                 url: /landhausdiele-vienna-classic/freudenau
                 code: freudenau
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -214,9 +233,8 @@ items:
                     isExternal: '0'
     -
         title: 'Landhausdiele gebürstet'
-        nesting: '0'
+        nesting: '1'
         type: blog-category
-        url: ''
         code: ''
         reference: '5'
         cmsPage: blog/category
