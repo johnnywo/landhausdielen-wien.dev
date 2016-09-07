@@ -145,9 +145,26 @@ a.list-group-item-success {
     border-right: none;
     border-left: none;
     border-bottom: 1px solid rgba(132, 118, 108, 0.83);
+    background-color: #6d5649;
 }
+
+a.list-group-item {
+    color: whitesmoke;
+}
+
 
 a.list-group-item-success:hover, a.list-group-item-success:focus {
     color: #ffffff;
     background-color: #755d4e;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #543928;
+    background-color: #fbfbfb;
+    border-color: #543928;
+}
+
+.secondary .list-group-item {
+    padding-left: 30px;
 }

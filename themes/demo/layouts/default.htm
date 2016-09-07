@@ -88,9 +88,9 @@ function onInit(){
                                             {% endif %}
 
                                                 {% if item.items %}
-                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}{% for subitem in item.items %}{% if path == subitem.url %}in{% endif %}{% endfor %}" id="{{ id }}">
+                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}{% for subitem in item.items %}{% if path == subitem.url %}in{% endif %}{% endfor %} secondary" id="{{ id }}">
                                                     {% for subitem in item.items %}
-                                                        <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}{% if path == subitem.url %}active{% endif %}"  data-parent="#SubMenu1">{{ subitem.title }}</a>
+                                                        <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}{% if path == subitem.url %}active{% endif %}"  data-parent="#SubMenu1">{% if path == subitem.url %}<span class="icon-caret-right"></span> {% endif %}{{ subitem.title }}</a>
                                                     {% endfor %}
                                                 </div>
                                                 {% endif %}
