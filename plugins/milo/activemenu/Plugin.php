@@ -8,6 +8,8 @@
 
 namespace Milo\ActiveMenu;
 
+use System\Classes\PluginBase;
+
 
 class Plugin extends PluginBase {
     public function pluginDetails()
@@ -20,17 +22,10 @@ class Plugin extends PluginBase {
         ];
     }
 
-
-    public function classActivePath($path)
-    {
-        $path = explode('.', $path);
-        $segment = 1;
-        foreach($path as $p) {
-            if((request()->segment($segment) == $p) == false) {
-                return '';
-            }
-            $segment++;
-        }
-        return ' active';
-    }
+	public function registerComponents()
+	{
+		return [
+			'Milo\ActiveMenu\Components\ActiveMenuItem' => 'activeMenuItem'
+		];
+	}
 }

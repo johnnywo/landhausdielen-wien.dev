@@ -4,12 +4,12 @@ description = "Default layout"
 code = "main-menu"
 
 [staticPage]
+[activeMenuItem]
 ==
 <?php
-use Milo\ActiveMenu;
-function onStart(){
-    $this['isChildActive'] = classActivePath($this)
-}
+
+$is_active = $this->isActive($url);
+
 ?>
 ==
 <!DOCTYPE html>
@@ -78,13 +78,14 @@ function onStart(){
 
                                             <a href="{{ item.url }}" class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-parent="#MainMenu">{{ item.title }}</a>
                                             {% elseif item.url and item.items == true %}
-                                            <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
+                                        {{ dump(isActive) }}
+                                            <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }}{{ ActiveMenuItem.isActive ? ActiveMenuItem.isActive : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
                                             {% else %}
                                             <span>{{ item.title }}</span>
                                             {% endif %}
 
                                                 {% if item.items %}
-                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}" id="{{ id }}">
+                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}{{ ActiveMenuItem.isActive ? ActiveMenuItem.isActive : '' }}" id="{{ id }}">
                                                     {% for subitem in item.items %}
                                                         <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}"  data-parent="#SubMenu1">{{ subitem.title }}</a>
                                                     {% endfor %}
