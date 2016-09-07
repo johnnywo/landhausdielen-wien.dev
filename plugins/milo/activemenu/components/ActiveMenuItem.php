@@ -29,7 +29,7 @@ class ActiveMenuItem extends \Cms\Classes\ComponentBase
 			}
 			$segment++;
 		}
-		return ' active';
+		return TRUE;
 	}
 
 }

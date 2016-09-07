@@ -8,7 +8,9 @@ code = "main-menu"
 ==
 <?php
 
-$is_active = $this->isActive($url);
+function onInit(){
+    $this['path'] = '/' . Request::path();
+}
 
 ?>
 ==
@@ -75,19 +77,20 @@ $is_active = $this->isActive($url);
                                         {% for item in staticMenu.menuItems if not staticMenu.menuItems.viewBag.isHidden %}
 
                                             {% if item.url and item.items == false %}
-
                                             <a href="{{ item.url }}" class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-parent="#MainMenu">{{ item.title }}</a>
+
                                             {% elseif item.url and item.items == true %}
-                                        {{ dump(isActive) }}
-                                            <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }}{{ ActiveMenuItem.isActive ? ActiveMenuItem.isActive : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
+                                            <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }}{{ is_active ? 'active' : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
+
                                             {% else %}
                                             <span>{{ item.title }}</span>
+
                                             {% endif %}
 
                                                 {% if item.items %}
-                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}{{ ActiveMenuItem.isActive ? ActiveMenuItem.isActive : '' }}" id="{{ id }}">
+                                                <div class="collapse {{ item.isChildActive ? 'in' : '' }}{% for subitem in item.items %}{% if path == subitem.url %}in{% endif %}{% endfor %}" id="{{ id }}">
                                                     {% for subitem in item.items %}
-                                                        <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}"  data-parent="#SubMenu1">{{ subitem.title }}</a>
+                                                        <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}{% if path == subitem.url %}active{% endif %}"  data-parent="#SubMenu1">{{ subitem.title }}</a>
                                                     {% endfor %}
                                                 </div>
                                                 {% endif %}
