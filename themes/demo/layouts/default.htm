@@ -4,7 +4,6 @@ description = "Default layout Current"
 code = "main-menu"
 
 [staticPage]
-
 [SeoCmsPage]
 ==
 <?php
@@ -18,14 +17,10 @@ function onInit(){
     <head>
         {% component 'SeoCmsPage' %}
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
+        <link rel="icon" type="image/png" href="{{ 'assets/images/favicon-wohngesund.png'|theme }}" />
         {% styles %}
-        <link href="{{ [
-            'assets/css/theme.css'
-        ]|theme }}" rel="stylesheet">
-        <link href="{{ [
-            'assets/css/wohngesund.css'
-        ]|theme }}" rel="stylesheet">
+        <link href="{{ ['assets/css/theme.css']|theme }}" rel="stylesheet">
+        <link href="{{ ['assets/css/wohngesund.css']|theme }}" rel="stylesheet">
     </head>
     <body>´
 
@@ -93,14 +88,13 @@ function onInit(){
                                     </div>
                                 </div>
                             </div>
-
-                    {% partial 'showrooms' %}
-
+                        <div class="leaf"></div>
                     </div>
                     <div class="col-sm-9">
                         {% page %}
                     </div>
                 </div>
+                {% partial "showrooms" %}
             </div>
         </section>
 

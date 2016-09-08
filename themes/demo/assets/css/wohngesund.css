@@ -5,6 +5,7 @@ body {
 body section#layout-content .col-sm-9 {
     background: whitesmoke;
     color:  #543928;
+    padding: 20px;
 }
 
 .container.wohngesund-brown{
@@ -51,25 +52,14 @@ body section#layout-content .col-sm-9 {
         color: white;
         border: none;
     }
-    .sidebar-nav .navbar ul {
-        float: none;
-    }
-    .sidebar-nav .navbar ul:not {
-        display: block;
-    }
-    .sidebar-nav .navbar li {
-        float: none;
-        display: block;
-        border: none;
-        border-bottom: 1px solid #c6bea3;
-    }
-    .sidebar-nav .navbar li a {
+
+    .sidebar-nav {
         padding-top: 12px;
         padding-bottom: 12px;
         color: white;
         border: none;
     }
-    .sidebar-nav .navbar li li a {
+    .sidebar-nav {
         color: #0d0d0d;
     }
     .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -77,14 +67,14 @@ body section#layout-content .col-sm-9 {
         color: white;
     }
 
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color: #e9e9e9;
-        background-color: #755c4a;
-    }
-
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
         color: #e9e9e9;
         background-color:#755c4a;
+    }
+
+    .content{
+        padding: 20px;
+        clear: both;
     }
 }
 
@@ -112,9 +102,17 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
-.sidebar-showrooms a, footer a {
+.showrooms a {
+    color: #f6ce88;
+}
+
+footer a {
     color: white;
-    text-decoration: underline;
+}
+
+.showrooms{
+    font-size: 13px;
+    padding: 20px;
 }
 
 @media (min-width: 768px) {
@@ -176,8 +174,8 @@ a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list
 }
 
 h1.title {
-    text-transform: uppercase;
     text-align: center;
+    margin-bottom:20px;
 }
 
 .content:first-letter {
@@ -185,3 +183,60 @@ h1.title {
     float: left;
     line-height: 40px;
 }
+
+.leaf {
+    background: url("../images/blatt-logo-wohngesund.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 280px;
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    .leaf{
+        display: none;
+    }
+}
+
+.orange {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f18430+0,f2b818+100 */
+    background: #f18430; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #f18430 0%, #f2b818 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  #f18430 0%,#f2b818 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  #f18430 0%,#f2b818 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f18430', endColorstr='#f2b818',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    padding: 10px 20px;
+    text-align: center;
+    border: 1px solid #f18430;
+}
+
+.orange a{
+    color: white;
+}
+
+.orange-border {
+    border: 1px solid #f18430;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.orange-border a {
+    color: #f18430;
+}
+
+.tuerkis-border {
+    border: 1px dashed #257576;
+    text-align: center;
+    padding: 10px 20px;
+    background: white;
+    color: #257576;
+    vertical-align: middle;
+}
+
+.tuerkis-border a {
+    color: #257576;
+}
+
+

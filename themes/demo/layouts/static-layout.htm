@@ -17,7 +17,7 @@ function onInit(){
 <head>
     {% component 'SeoStaticPage' %}
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
+    <link rel="icon" type="image/png" href="{{ 'assets/images/favicon-wohngesund.png'|theme }}" />
     {% styles %}
     <link href="{{ [
             'assets/css/theme.css'
@@ -92,14 +92,13 @@ function onInit(){
                         </div>
                     </div>
                 </div>
-
-                {% partial 'showrooms' %}
-
+                <div class="leaf"></div>
             </div>
             <div class="col-sm-9">
                 {% page %}
             </div>
         </div>
+        {% partial 'showrooms' %}
     </div>
 </section>
 
@@ -126,6 +125,9 @@ function onInit(){
             'assets/javascript/app.js'
         ]|theme }}"></script>
 {% framework extras %}
+{% put scripts %}
+<script src="https://use.fontawesome.com/f5ed3d4d13.js"></script>
+{% endput %}
 {% scripts %}
 
 </body>
