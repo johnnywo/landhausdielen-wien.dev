@@ -1,29 +1,23 @@
-description = "Default layout"
+description = "Default layout Current"
 
 [staticMenu]
 code = "main-menu"
 
 [staticPage]
-[activeMenuItem]
+
+[SeoCmsPage]
 ==
 <?php
-
 function onInit(){
     $this['path'] = '/' . Request::path();
 }
-
 ?>
 ==
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
+        {% component 'SeoCmsPage' %}
         <meta charset="utf-8">
-        <title>OctoberCMS - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        <meta name="author" content="OctoberCMS">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
         {% styles %}
         <link href="{{ [
@@ -77,7 +71,7 @@ function onInit(){
                                         {% for item in staticMenu.menuItems if not staticMenu.menuItems.viewBag.isHidden %}
 
                                             {% if item.url and item.items == false %}
-                                            <a href="{{ item.url }}" class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-parent="#MainMenu">{{ item.title }}</a>
+                                            <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-parent="#MainMenu">{{ item.title }} {% if item.viewBag.cssClass %}<span class="{{ item.viewBag.cssClass }}"></span>{% endif %}</a>
 
                                             {% elseif item.url and item.items == true %}
                                             <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }}{{ is_active ? 'active' : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
@@ -137,4 +131,3 @@ function onInit(){
 
     </body>
 </html>
-

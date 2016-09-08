@@ -1,18 +1,132 @@
-description = "Output static pages."
-
-[staticPage]
+description = "Static Page"
 
 [staticMenu]
+code = "main-menu"
 
-[staticBreadcrumbs]
+[staticPage]
+[SeoStaticPage]
 ==
-<html>
-    <head>
-        <title>{{ this.page.title }}</title>
-    </head>
-    <body>
-        {% component 'staticMenu' %}
-        {% component 'staticBreadcrumbs' %}
-        {% page %}
-    </body>
+<?php
+function onInit(){
+    $this['path'] = '/' . Request::path();
+}
+?>
+==
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    {% component 'SeoStaticPage' %}
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
+    {% styles %}
+    <link href="{{ [
+            'assets/css/theme.css'
+        ]|theme }}" rel="stylesheet">
+    <link href="{{ [
+            'assets/css/wohngesund.css'
+        ]|theme }}" rel="stylesheet">
+</head>
+<body>´
+
+<!-- Header -->
+<header id="layout-header">
+
+    <div class="container wohngesund-brown">
+        <div class="col-sm-12">
+            <div class="col-sm-3">
+                <a href="/"><img class="logo" src="{{ 'assets/images/logo_wohngesund.png'|theme }}" /></a>
+            </div>
+            <div class="col-sm-9">
+                <div class="bigger">
+                    Landhausdielen von Wohngesund
+                </div>
+                <div>
+                    Nussbaum-, Eiche-, Country House Landhausdielen direkt vom Generalimporteur
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+
+<!-- Content -->
+<section id="layout-content">
+    <div class="container wohngesund-brown">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="sidebar-nav">
+                    <div id="MainMenu" class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="visible-xs navbar-brand" href="{{ 'home'|page }}">Landhausdielen Wien</a>
+                        </div>
+                        <div class="list-group panel collapse navbar-collapse sidebar-navbar-collapse">
+                            {% for item in staticMenu.menuItems if not staticMenu.menuItems.viewBag.isHidden %}
+
+                            {% if item.url and item.items == false %}
+                            <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="{{ item.isActive ? 'active' : '' }} list-group-item list-group-item-success" data-parent="#MainMenu">{{ item.title }} {% if item.viewBag.cssClass %}<span class="{{ item.viewBag.cssClass }}"></span>{% endif %}</a>
+
+                            {% elseif item.url and item.items == true %}
+                            <a href="#{% set id = id + 1 %}{{ id }}" class="{{ item.isActive ? 'active' : '' }}{{ is_active ? 'active' : '' }} list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">{{ item.title }} <span class="icon-caret-down"></span></a>
+
+                            {% else %}
+                            <span>{{ item.title }}</span>
+
+                            {% endif %}
+
+                            {% if item.items %}
+                            <div class="collapse {{ item.isChildActive ? 'in' : '' }}{% for subitem in item.items %}{% if path == subitem.url %}in{% endif %}{% endfor %} secondary" id="{{ id }}">
+                                {% for subitem in item.items %}
+                                <a href="{{ subitem.url }}" class="list-group-item {{ item.isChildActive ? 'active' : '' }}{% if path == subitem.url %}active{% endif %}"  data-parent="#SubMenu1">{% if path == subitem.url %}<span class="icon-caret-right"></span> {% endif %}{{ subitem.title }}</a>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                {% partial 'showrooms' %}
+
+            </div>
+            <div class="col-sm-9">
+                {% page %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="layout-footer">
+    {% partial "footer" %}
+</footer>
+
+<!-- Scripts -->
+<script src="{{ [
+            'assets/javascript/jquery.js',
+            'assets/vendor/bootstrap/js/transition.js',
+            'assets/vendor/bootstrap/js/alert.js',
+            'assets/vendor/bootstrap/js/button.js',
+            'assets/vendor/bootstrap/js/carousel.js',
+            'assets/vendor/bootstrap/js/collapse.js',
+            'assets/vendor/bootstrap/js/dropdown.js',
+            'assets/vendor/bootstrap/js/modal.js',
+            'assets/vendor/bootstrap/js/tooltip.js',
+            'assets/vendor/bootstrap/js/popover.js',
+            'assets/vendor/bootstrap/js/scrollspy.js',
+            'assets/vendor/bootstrap/js/tab.js',
+            'assets/vendor/bootstrap/js/affix.js',
+            'assets/javascript/app.js'
+        ]|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+
+</body>
 </html>

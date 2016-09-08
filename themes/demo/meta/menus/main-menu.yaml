@@ -15,21 +15,18 @@ items:
             isExternal: '0'
     -
         title: Aktionen
-        nesting: ''
         type: url
         url: 'http://www.wohngesund.at/aktionen/parkett-landhausdielen'
         code: ''
-        reference: ''
-        cmsPage: ''
-        replace: ''
         viewBag:
             isHidden: '0'
-            cssClass: ''
+            cssClass: icon-external-link
             isExternal: '1'
     -
         title: 'Landhausdiele antik'
         nesting: '1'
         type: blog-category
+        url: ''
         code: antik
         reference: '2'
         cmsPage: blog/category
@@ -41,9 +38,13 @@ items:
         items:
             -
                 title: Alhambra
+                nesting: ''
                 type: url
                 url: /landhausdielen-castle-antik/alhambra
                 code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -91,6 +92,7 @@ items:
         title: 'Landhausdiele glatt'
         nesting: '0'
         type: blog-category
+        url: ''
         code: glatt
         reference: '3'
         cmsPage: blog/category
@@ -235,6 +237,7 @@ items:
         title: 'Landhausdiele gebürstet'
         nesting: '1'
         type: blog-category
+        url: ''
         code: ''
         reference: '5'
         cmsPage: blog/category
@@ -443,14 +446,10 @@ items:
             isExternal: '0'
     -
         title: Kontakt
-        nesting: ''
         type: url
         url: 'http://www.wohngesund.at/kontakt'
         code: ''
-        reference: ''
-        cmsPage: ''
-        replace: ''
         viewBag:
             isHidden: '0'
-            cssClass: ''
+            cssClass: icon-external-link
             isExternal: '1'

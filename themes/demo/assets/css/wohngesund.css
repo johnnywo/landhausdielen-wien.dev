@@ -4,7 +4,7 @@ body {
 
 body section#layout-content .col-sm-9 {
     background: whitesmoke;
-    color: black;
+    color:  #543928;
 }
 
 .container.wohngesund-brown{
@@ -167,4 +167,21 @@ a.list-group-item-success:hover, a.list-group-item-success:focus {
 
 .secondary .list-group-item {
     padding-left: 30px;
+}
+
+a.list-group-item-success.active, a.list-group-item-success.active:hover, a.list-group-item-success.active:focus {
+    color: #543928;
+    background-color: #fbfbfb;
+    border-color: #543928;
+}
+
+h1.title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.content:first-letter {
+    font-size: 50px;
+    float: left;
+    line-height: 40px;
 }
