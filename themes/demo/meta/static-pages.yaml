@@ -1,6 +1,6 @@
 static-pages:
-    holzdielen: {  }
     home: {  }
+    holzdielen: {  }
     online-anfrage:
         online-anfrage-wiederverkaeufer: {  }
     wiederverkaeufer: {  }
