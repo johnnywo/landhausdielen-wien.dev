@@ -22,12 +22,12 @@ function onInit(){
         <link href="{{ ['assets/css/theme.css']|theme }}" rel="stylesheet">
         <link href="{{ ['assets/css/wohngesund.css']|theme }}" rel="stylesheet">
     </head>
-    <body>´
+    <body>
 
+    <div class="container wohngesund-brown">
         <!-- Header -->
         <header id="layout-header">
 
-            <div class="container wohngesund-brown">
                 <div class="col-sm-12">
                     <div class="col-sm-3">
                         <a href="/"><img class="logo" src="{{ 'assets/images/logo_wohngesund.png'|theme }}" /></a>
@@ -36,22 +36,22 @@ function onInit(){
                         <div class="bigger">
                             Landhausdielen von Wohngesund
                         </div>
-                        <div>
+                        <div class="semi-bigger">
                             Nussbaum-, Eiche-, Country House Landhausdielen direkt vom Generalimporteur
                         </div>
                     </div>
 
                 </div>
-            </div>
 
         </header>
 
         <!-- Content -->
         <section id="layout-content">
-            <div class="container wohngesund-brown">
                 <div class="row">
                     <div class="col-sm-3">
-                        <div class="sidebar-nav">
+                        <div class="clearfix">
+                            <div class="natur-im-raum"><img src="{{ 'assets/images/natur-im-raum.png'|theme }}"></div>
+                            <div class="sidebar-nav">
                                 <div id="MainMenu" class="navbar navbar-default">
                                     <div class="navbar-header">
                                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
@@ -88,16 +88,15 @@ function onInit(){
                                     </div>
                                 </div>
                             </div>
-                        <div class="leaf"></div>
+                        </div>
                     </div>
                     <div class="col-sm-9">
                         {% page %}
                     </div>
                 </div>
                 {% partial "showrooms" %}
-            </div>
         </section>
-
+    </div>
         <!-- Footer -->
         <footer id="layout-footer">
             {% partial "footer" %}
