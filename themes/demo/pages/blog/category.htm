@@ -18,34 +18,28 @@ slug = "{{ :slug }}"
 displayEmpty = 0
 categoryPage = "blog/category"
 
-[gallery]
-idGallery = "{{ :title }}"
-lang = "Gallery"
-jqueryinject = "yes"
-thumbnail = "true"
-caption = "true"
-desc = "true"
-counter = "true"
-controls = "true"
-preload = 1
-mode = "fade"
-speed = 300
-loop = "true"
-auto = "false"
-pause = 2000
-escKey = "true"
-height = 180
-width = 270
-resizer = "auto"
 ==
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-12">
         {% set posts = blogPosts.posts %}
 
         <ul class="post-list">
             {% for post in posts %}
-            <li>
+            <li class="list-unstyled">
                 <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                {% if post.featured_images.count %}
+                <div class="featured-images text-center">
+                    {% for image in post.featured_images %}
+                    <p>
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 100%" />
+                    </p>
+                    {% endfor %}
+                </div>
+                {% endif %}
 
                 <p class="excerpt">{{ post.summary }}</p>
             </li>
@@ -70,19 +64,6 @@ resizer = "auto"
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
             {% endif %}
         </ul>
-        {% endif %}
-        {% if post.featured_images.count %}
-        <div class="featured-images text-center">
-            {% for image in post.featured_images %}
-            <p>
-                <img
-                    data-src="{{ image.filename }}"
-                    src="{{ image.path }}"
-                    alt="{{ image.description }}"
-                    style="max-width: 100%" />
-            </p>
-            {% endfor %}
-        </div>
         {% endif %}
     </div>
 </div>
